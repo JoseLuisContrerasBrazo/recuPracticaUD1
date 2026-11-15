@@ -1,0 +1,8 @@
+<%- include("partials/header", { titulo: "Página no encontrada" }) %>
+<section class="panel estado-pagina">
+  <p class="eyebrow">ERROR 404</p>
+  <h1>No encontramos esa página</h1>
+  <p>El recurso solicitado no existe: <code><%= url %></code></p>
+  <a class="boton" href="/talleres">Volver a los talleres</a>
+</section>
+<%- include("partials/footer") %>

@@ -1,0 +1,17 @@
+<%- include("partials/header", { titulo: taller.titulo }) %>
+<a class="volver" href="/talleres">← Volver al catálogo</a>
+<article class="detalle panel">
+  <p class="eyebrow"><%= taller.categoria %> · Nivel <%= taller.nivel %></p>
+  <h1><%= taller.titulo %></h1>
+  <dl class="datos">
+    <div><dt>Plazas totales</dt><dd><%= taller.plazas %></dd></div>
+    <div><dt>Plazas restantes</dt><dd><%= taller.plazasRestantes %></dd></div>
+    <div><dt>Disponibilidad</dt><dd><%= taller.estadoPlazas %></dd></div>
+  </dl>
+  <% if (taller.plazasRestantes > 0) { %>
+    <a class="boton" href="/talleres/<%= taller.id %>/inscripcion">Inscribirme</a>
+  <% } else { %>
+    <span class="etiqueta etiqueta--agotado">Completo</span>
+  <% } %>
+</article>
+<%- include("partials/footer") %>

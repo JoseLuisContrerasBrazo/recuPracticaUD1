@@ -1,0 +1,45 @@
+<%- include("partials/header", { titulo: "Catálogo de talleres" }) %>
+<section class="intro">
+  <p class="eyebrow">JORNADAS TECNOLÓGICAS</p>
+  <h1>Explora los talleres</h1>
+  <p>Consulta las actividades y encuentra la que mejor encaja contigo.</p>
+</section>
+<% if (mensaje) { %><div class="alerta alerta--ok" role="status"><%= mensaje %></div><% } %>
+<section class="panel">
+  <h2>Filtrar talleres</h2>
+  <form action="/talleres" method="GET" class="filtros">
+    <label>Categoría
+      <select name="categoria">
+        <option value="">Todas</option>
+        <% for (const categoria of ["web", "sistemas", "diseno"]) { %>
+          <option value="<%= categoria %>" <%= filtros.categoria === categoria ? "selected" : "" %>><%= categoria %></option>
+        <% } %>
+      </select>
+    </label>
+    <label>Nivel
+      <select name="nivel">
+        <option value="">Todos</option>
+        <% for (const nivel of ["inicial", "intermedio", "avanzado"]) { %>
+          <option value="<%= nivel %>" <%= filtros.nivel === nivel ? "selected" : "" %>><%= nivel %></option>
+        <% } %>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" name="disponibles" value="true" <%= filtros.disponibles === "true" ? "checked" : "" %>> Solo con plazas</label>
+    <button class="boton" type="submit">Aplicar filtros</button>
+    <a class="boton boton--secundario" href="/talleres">Limpiar</a>
+  </form>
+</section>
+<section class="rejilla">
+  <% if (talleres.length === 0) { %>
+    <div class="vacio"><h2>No hay talleres</h2><p>No se han encontrado talleres con esos filtros.</p></div>
+  <% } %>
+  <% for (const taller of talleres) { %>
+    <article class="tarjeta">
+      <div class="tarjeta__meta"><span><%= taller.categoria %></span><span><%= taller.nivel %></span></div>
+      <h2><%= taller.titulo %></h2>
+      <p><strong><%= taller.estadoPlazas %></strong></p>
+      <a class="boton" href="/talleres/<%= taller.id %>">Ver taller</a>
+    </article>
+  <% } %>
+</section>
+<%- include("partials/footer") %>

@@ -1,0 +1,15 @@
+{
+  "name": "sistema-inscripcion-talleres",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Práctica de recuperación DWES UD1: inscripción a talleres y actividades",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
