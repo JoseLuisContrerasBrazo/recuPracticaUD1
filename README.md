@@ -162,14 +162,10 @@ Los valores recibidos del navegador se consideran no fiables. El ID se convierte
 
 El alta se realiza de forma síncrona en memoria, sin operaciones asíncronas entre la comprobación de plazas y el `push`, evitando que dos manejadores se intercalen en ese tramo dentro de este proceso Node. Al reiniciar el servidor, las inscripciones se pierden, tal como corresponde al almacenamiento en memoria de esta práctica.
 
-## 9. GitHub y uso de IA
+## 9. Uso de IA
 
-Antes de entregar:
+Enlace al chat de ia 
 
-1. Crea un repositorio en GitHub.
-2. Sube el proyecto sin `node_modules`.
-3. Añade el enlace real de la conversación de apoyo, si el profesor lo requiere, y explica qué consultas realizaste y qué partes has comprendido y comprobado.
-4. Comparte el repositorio con `manuel.granados@eusa.es` o hazlo público.
-5. Comprueba que el README permite repetir las pruebas `curl` y que cada operación de usuario tiene su formulario HTML equivalente.
+https://chatgpt.com/share/6af9d89b-d220-83ed-8269-3429ea63018a
 
-La práctica indica que debes comprender el código y poder explicarlo y modificarlo durante la evaluación. No presentes como probado algo que no hayas ejecutado tú.
+
